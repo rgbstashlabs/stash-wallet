@@ -1,0 +1,52 @@
+import { W as t, __tla as __tla_0 } from "./api-DqY8XSTj.js";
+let s;
+let __tla = Promise.all([
+  (() => {
+    try {
+      return __tla_0;
+    } catch {
+    }
+  })()
+]).then(async () => {
+  s = class extends t {
+    constructor() {
+      super(), this.handleVisibilityChange = () => {
+        const e = {
+          isActive: document.hidden !== true
+        };
+        this.notifyListeners("appStateChange", e), document.hidden ? this.notifyListeners("pause", null) : this.notifyListeners("resume", null);
+      }, document.addEventListener("visibilitychange", this.handleVisibilityChange, false);
+    }
+    exitApp() {
+      throw this.unimplemented("Not implemented on web.");
+    }
+    async getInfo() {
+      throw this.unimplemented("Not implemented on web.");
+    }
+    async getLaunchUrl() {
+      return {
+        url: ""
+      };
+    }
+    async getState() {
+      return {
+        isActive: document.hidden !== true
+      };
+    }
+    async minimizeApp() {
+      throw this.unimplemented("Not implemented on web.");
+    }
+    async toggleBackButtonHandler() {
+      throw this.unimplemented("Not implemented on web.");
+    }
+    async getAppLanguage() {
+      return {
+        value: navigator.language.split("-")[0].toLowerCase()
+      };
+    }
+  };
+});
+export {
+  s as AppWeb,
+  __tla
+};
